@@ -8,6 +8,7 @@ import com.jeonguk.auth.config.jackson.LocalDateSerializer;
 import com.jeonguk.auth.config.jackson.LocalDateTimeDeserializer;
 import com.jeonguk.auth.config.jackson.LocalDateTimeSerializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
@@ -17,6 +18,7 @@ import org.springframework.web.reactive.config.WebFluxConfigurer;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@Configuration
 public class JacksonConfig {
 
     @Bean

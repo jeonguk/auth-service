@@ -27,6 +27,9 @@ public class User {
     @Size(min = 60, max = 60)
     private String password;
 
+    @Size(min = 512, max = 512)
+    private String userDesc;
+
     @JsonIgnore
     private Set<Authority> authorities = new HashSet<>();
 }

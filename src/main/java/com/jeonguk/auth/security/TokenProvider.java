@@ -37,9 +37,7 @@ public class TokenProvider {
     @PostConstruct
     public void init() {
         this.secretKey = encoder.encodeToString(SALT_KEY.getBytes(StandardCharsets.UTF_8));
-
-        this.tokenValidityInMilliseconds =
-                1000 * TOKEN_VALIDITY;
+        this.tokenValidityInMilliseconds = 1000 * TOKEN_VALIDITY;
     }
 
     public String createToken(Authentication authentication) {

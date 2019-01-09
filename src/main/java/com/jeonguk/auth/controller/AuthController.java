@@ -35,8 +35,7 @@ public class AuthController {
             return Mono.error(new RuntimeException("Bad request"));
         }
 
-        Authentication authenticationToken =
-                new UsernamePasswordAuthenticationToken(loginDTO.getUsername(), loginDTO.getPassword());
+        Authentication authenticationToken = new UsernamePasswordAuthenticationToken(loginDTO.getUsername(), loginDTO.getPassword());
 
         Mono<Authentication> authentication = this.authenticationManager.authenticate(authenticationToken);
         authentication.doOnError(throwable -> {

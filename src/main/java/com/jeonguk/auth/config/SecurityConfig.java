@@ -73,7 +73,8 @@ public class SecurityConfig {
     @Bean
     public AuthenticationWebFilter webFilter() {
         AuthenticationWebFilter authenticationWebFilter = new AuthenticationWebFilter(repositoryReactiveAuthenticationManager());
-        authenticationWebFilter.setAuthenticationConverter(new TokenAuthenticationConverter(tokenProvider));
+        authenticationWebFilter.setServerAuthenticationConverter(new TokenAuthenticationConverter(tokenProvider));
+        //authenticationWebFilter.setAuthenticationConverter(new TokenAuthenticationConverter(tokenProvider));
         authenticationWebFilter.setRequiresAuthenticationMatcher(new JWTHeadersExchangeMatcher());
         authenticationWebFilter.setSecurityContextRepository(new WebSessionServerSecurityContextRepository());
         return authenticationWebFilter;
